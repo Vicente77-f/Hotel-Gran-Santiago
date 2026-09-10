@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle usuario | Administrador - Hotel Gran Santiago</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+  <!-- TODO: reemplazar por el layout compartido de admin-home.html -->
+  <header class="admin-header">
+    <h1>Hotel Gran Santiago</h1>
+  </header>
+
+  <nav class="admin-sidebar">
+    <ul>
+      <li><a href="admin-home.html">Inicio</a></li>
+      <li><a href="admin-habitaciones.html">Habitaciones</a></li>
+      <li><a href="admin-usuarios.html" aria-current="page">Usuarios</a></li>
+    </ul>
+  </nav>
+
+  <main class="admin-content">
+    <section aria-labelledby="titulo-usuario">
+      <h2 id="titulo-usuario">Detalle de usuario</h2>
+
+      <dl class="detalle-usuario">
+        <dt>Run</dt>
+        <dd>190110228</dd>
+
+        <dt>Nombre</dt>
+        <dd>Matias</dd>
+
+        <dt>Apellidos</dt>
+        <dd>Ejemplo Apellido</dd>
+
+        <dt>Correo</dt>
+        <dd>matias@duoc.cl</dd>
+
+        <dt>Fecha de nacimiento</dt>
+        <dd>01/01/2000</dd>
+
+        <dt>Tipo de usuario</dt>
+        <dd>Administrador</dd>
+
+        <dt>Región</dt>
+        <dd>Región Metropolitana de Santiago</dd>
+
+        <dt>Comuna</dt>
+        <dd>Santiago</dd>
+
+        <dt>Dirección</dt>
+        <dd>Av. Ejemplo 123</dd>
+      </dl>
+
+      <a href="admin-usuario-editar.html" class="btn btn-primary">Editar</a>
+      <a href="admin-usuarios.html" class="btn btn-secondary">Volver al listado</a>
+    </section>
+  </main>
+
+  <footer class="admin-footer">
+    <p>&copy; 2026 Hotel Gran Santiago</p>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>
