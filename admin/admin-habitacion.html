@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hotel Gran Santiago | Panel de administración</title>
-  <meta name="description" content="Panel de administración de Hotel Gran Santiago.">
+  <title>Hotel Gran Santiago | Gestión de habitaciones</title>
+  <meta name="description" content="Gestión de habitaciones del panel de administración de Hotel Gran Santiago.">
   <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
@@ -23,29 +23,36 @@
 
   <main>
 
-    <!-- ===================== PANEL DE ADMINISTRACIÓN ===================== -->
+    <!-- ===================== GESTIÓN DE HABITACIONES ===================== -->
     <section class="admin-panel">
       <div class="container">
-        <h1>Panel de administración</h1>
-        <p class="admin-intro">Bienvenido/a. Desde aquí puedes gestionar los usuarios y las habitaciones del hotel.</p>
+        <a href="admin-home.html" class="link-arrow">&larr; Volver al panel</a>
+        <h1>Gestión de habitaciones</h1>
+        <p class="admin-intro">Elige qué quieres hacer con las habitaciones del hotel.</p>
 
-        <div class="admin-grid">
+        <div class="admin-grid admin-grid-3">
 
-          <!-- Tarjeta: Usuarios -->
           <article class="admin-card">
-            <h2>Usuarios</h2>
-            <p>Crea, edita y revisa las cuentas de los huéspedes y del equipo del hotel.</p>
+            <h2>Nueva habitación</h2>
+            <p>Registra una nueva habitación en el sistema.</p>
             <div class="admin-card-actions">
-              <a href="admin-usuario.html" class="btn btn-primary">Gestionar usuarios</a>
+              <a href="admin-habitacion-nueva.html" class="btn btn-primary">Crear habitación</a>
             </div>
           </article>
 
-          <!-- Tarjeta: Habitaciones -->
           <article class="admin-card">
-            <h2>Habitaciones</h2>
-            <p>Crea, edita y revisa la información de las habitaciones del hotel.</p>
+            <h2>Editar habitación</h2>
+            <p>Modifica los datos de una habitación existente.</p>
             <div class="admin-card-actions">
-              <a href="admin-habitacion.html" class="btn btn-primary">Gestionar habitaciones</a>
+              <a href="admin-habitacion-editar.html" class="btn btn-outline">Editar</a>
+            </div>
+          </article>
+
+          <article class="admin-card">
+            <h2>Mostrar habitaciones</h2>
+            <p>Revisa el listado de habitaciones registradas.</p>
+            <div class="admin-card-actions">
+              <a href="admin-habitaciones-mostrar.html" class="btn btn-outline">Ver listado</a>
             </div>
           </article>
 

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Gran Santiago | Editar Habitación</title>
+    <meta name="description" content="Panel de administración para editar habitaciones del Hotel Gran Santiago">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <nav class="admin-navbar">
+        <div class="logo">Hotel Gran Santiago - ADMIN</div>
+        <ul class="nav-links">
+            <li><a href="admin-home.html">Inicio</a></li>
+            <li><a href="admin-habitaciones.html" class="active">Habitaciones</a></li>
+            <li><a href="admin-usuarios.html">Usuarios</a></li>
+            <li><a href="../index.html">Ver sitio web</a></li>
+        </ul>
+    </nav> 
+    
+    <main class="admin-container">
+        <section class="admin-header">
+            <h1>Crear Nueva Habitación</h1>
+            <a href="admin-habitaciones.html" class="btn btn-secondary">Volver al listado</a>
+        </section>
+
+        <section class="form-container">
+            <form action="#" method="POST" class="admin-form">
+                <div class="form-group">
+                    <label for="numero">Número de Habitación / ID:</label>
+                    <input type="text" id="numero" name="numero" required placeholder="Ej: 103">
+                </div>
+
+                <!-- Campo: Tipo de Habitación (Lista desplegable) -->
+                <div class="form-group">
+                    <label for="tipo">Tipo de Habitación:</label>
+                    <select id="tipo" name="tipo" required>
+                        <option value="">Seleccione un tipo</option>
+                        <option value="simple">Habitación Simple</option>
+                        <option value="doble">Habitación Doble</option>
+                        <option value="suite-junior">Suite Junior</option>
+                        <option value="suite-premium">Suite Premium</option>
+                    </select>
+                </div>
+
+                <!-- Campo: Capacidad -->
+                <div class="form-group">
+                    <label for="capacidad">Capacidad (Personas):</label>
+                    <input type="number" id="capacidad" name="capacidad" min="1" max="6" required placeholder="Ej: 2">
+                </div>
+
+                <!-- Campo: Precio por Noche -->
+                <div class="form-group">
+                    <label for="precio">Precio por Noche (CLP):</label>
+                    <input type="number" id="precio" name="precio" required placeholder="Ej: 85000">
+                </div>
+
+                <!-- Campo: Estado -->
+                <div class="form-group">
+                    <label for="estado">Estado Inicial:</label>
+                    <select id="estado" name="estado" required>
+                        <option value="disponible">Disponible</option>
+                        <option value="mantenimiento">En Mantenimiento</option>
+                        <option value="ocupada">Ocupada</option>
+                    </select>
+                </div>
+
+                <!-- Campo: Subir Imagen -->
+                <div class="form-group">
+                    <label for="imagen">Imagen de la Habitación:</label>
+                    <input type="file" id="imagen" name="imagen" accept="image/*">
+                </div>
+
+                <!-- Campo: Descripción -->
+                <div class="form-group">
+                    <label for="descripcion">Descripción / Detalles:</label>
+                    <textarea id="descripcion" name="descripcion" rows="4" placeholder="Ej: Habitación con vista a la ciudad, incluye desayuno..."></textarea>
+                </div>
+
+                <!-- Botones de acción del formulario -->
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Guardar Habitación</button>
+                    <button type="reset" class="btn btn-secondary">Limpiar Formulario</button>
+                </div>
+
+            </form>
+        </section>
+    </main>
+</body>
+</html>

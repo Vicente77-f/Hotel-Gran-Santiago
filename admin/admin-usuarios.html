@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Usuarios | Administrador - Hotel Gran Santiago</title>
+  <meta name="description" content="Listado de usuarios del panel de administración de Hotel Gran Santiago.">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+  <!-- ===================== HEADER ADMIN ===================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="admin-home.html" class="logo">Hotel <span>Gran Santiago</span></a>
+
+      <div class="admin-user-info">
+        <span>Hola, Administrador</span>
+        <a href="../tienda/login.html" class="btn btn-outline">Cerrar sesión</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===================== LISTADO DE USUARIOS ===================== -->
+    <section class="admin-panel">
+      <div class="container">
+        <a href="admin-usuario.html" class="link-arrow">&larr; Volver a Gestión de usuarios</a>
+
+        <div class="admin-toolbar">
+          <div>
+            <h1>Usuarios registrados</h1>
+            <p class="admin-intro">Listado de huéspedes y administradores del sistema.</p>
+          </div>
+          <a href="admin-usuario-nuevo.html" class="btn btn-primary">+ Nuevo usuario</a>
+        </div>
+
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Run</th>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Tipo de usuario</th>
+                <th>Comuna</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>19.011.022-8</td>
+                <td>Matias Ejemplo</td>
+                <td>matias@duoc.cl</td>
+                <td>Administrador</td>
+                <td>Santiago</td>
+                <td class="admin-table-actions">
+                  <a href="admin-usuario-mostrar.html" class="btn btn-outline">Ver</a>
+                  <a href="admin-usuario-editar.html" class="btn btn-outline">Editar</a>
+                </td>
+              </tr>
+              <tr>
+                <td>17.222.333-4</td>
+                <td>Pía Ejemplo</td>
+                <td>pia@duoc.cl</td>
+                <td>Huésped</td>
+                <td>Providencia</td>
+                <td class="admin-table-actions">
+                  <a href="admin-usuario-mostrar.html" class="btn btn-outline">Ver</a>
+                  <a href="admin-usuario-editar.html" class="btn btn-outline">Editar</a>
+                </td>
+              </tr>
+              <tr>
+                <td>16.444.555-6</td>
+                <td>Basti Ejemplo</td>
+                <td>basti@duoc.cl</td>
+                <td>Huésped</td>
+                <td>Ñuñoa</td>
+                <td class="admin-table-actions">
+                  <a href="admin-usuario-mostrar.html" class="btn btn-outline">Ver</a>
+                  <a href="admin-usuario-editar.html" class="btn btn-outline">Editar</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="form-hint" style="margin-top: 12px;">
+          Nota: esta tabla usa datos de ejemplo escritos directamente en el HTML, ya que el
+          proyecto todavía no tiene una base de datos real conectada.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Hotel Gran Santiago — Panel de administración interno.</p>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>
