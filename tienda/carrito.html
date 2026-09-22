@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrito de compra · Hotel Gran Santiago</title>
+    <meta name="description" content="Revisa el detalle de las habitaciones agregadas a tu carrito y confirma tu reserva." />
+    <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+
+    <!-- ===================== HEADER / NAV ===================== -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">Hotel Gran Santiago</a>
+            <nav aria-label="Navegacion principal">
+                <ul class="nav-list">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="habitaciones.html">Habitaciones</a> </li>
+                    <li><a href="#contacto">Contacto</a> </li>
+                    <li>
+                        <a href="carrito.html" class="cart-link">🛒 Carrito<span id="cart-count" class="cart-badge" hidden>0</span></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="page-hero-inner">
+                <p class="breadcrumb"><a href="index.html">Inicio</a> / Carrito</p>
+                <h1>Tu carrito</h1>
+                <p>Revisa el detalle de cada habitación que agregaste (fechas, huéspedes y subtotal) antes de confirmar tu reserva.</p>
+            </div>
+        </section>
+
+        <!--
+          ===================== CONTENIDO DEL CARRITO =====================
+          "cart-items" empieza vacío: carrito.js lo llena leyendo lo que
+          haya guardado en localStorage (lo que se agregó desde
+          detalle-habitacion.html). Si no hay nada guardado, carrito.js
+          muestra un mensaje de "carrito vacío" en su lugar.
+        -->
+        <section class="cart-section" aria-label="Detalle del carrito de compra">
+            <div>
+                <div id="cart-items" class="cart-items">
+                    <!-- Se llena dinámicamente con js/carrito.js -->
+                </div>
+            </div>
+
+            <!-- Columna derecha: total a pagar + formulario para confirmar -->
+            <aside class="cart-summary" aria-label="Resumen y confirmación">
+                <h2>Resumen</h2>
+                <div class="cart-total-row">
+                    <span>Total</span>
+                    <span id="cart-total-amount" class="cart-total-amount">$0</span>
+                </div>
+
+                <form id="form-checkout" novalidate>
+                    <div class="form-row">
+                        <label for="checkout-nombre">Nombre completo</label>
+                        <input type="text" id="checkout-nombre" name="checkout-nombre" autocomplete="name" required minlength="3" />
+                        <span class="field-error" id="error-checkout-nombre"></span>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="checkout-correo">Correo electrónico</label>
+                        <input type="email" id="checkout-correo" name="checkout-correo" autocomplete="email" required />
+                        <span class="field-error" id="error-checkout-correo"></span>
+                    </div>
+
+                    <!-- El botón se deshabilita solo (con JS) cuando el carrito está vacío -->
+                    <button type="submit" class="btn btn-primary btn-full" id="boton-confirmar">Confirmar reserva</button>
+                    <p id="checkout-exito" class="form-success" hidden></p>
+                </form>
+            </aside>
+        </section>
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div>
+                <p class="footer-brand">Hotel Gran Santiago</p>
+                <p>Av. Libertador Bernardo O'Higgins 1234, Santiago,Chile</p>
+            </div>
+            <div>
+                <p>Reservas: reservas@hotelgransantiago.cl</p>
+                <p>+56 2 2345 6789</p>
+            </div>
+            <div>
+                <p>&copy; 2026 Hotel Gran Santiago. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/rooms-data.js"></script>
+    <script src="../js/validaciones.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/carrito.js"></script>
+</body>
+</html>
