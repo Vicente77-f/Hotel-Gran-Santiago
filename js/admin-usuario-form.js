@@ -1,14 +1,4 @@
-// ============================================================
-// admin-usuario-form.js
-// Validación simple para los formularios de Nuevo usuario y
-// Editar usuario del panel de administración (pauta IL1.2).
-// Este mismo archivo sirve para las dos páginas: revisa cuál
-// formulario existe en la página actual y le agrega las reglas.
-// ============================================================
-
 document.addEventListener('DOMContentLoaded', function () {
-  // Puede ser el formulario de "nuevo" o el de "editar"; solo uno
-  // de los dos existirá en la página, según en cuál estemos.
   var form = document.getElementById('usuarioNuevoForm') || document.getElementById('usuarioEditarForm');
   if (!form) return;
 
@@ -26,8 +16,6 @@ document.addEventListener('DOMContentLoaded', function () {
   var passwordInput = document.getElementById('password');
 
   var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  // Validación simple de formato de Run chileno: números + guion + dígito
-  // verificador (no calcula el dígito verificador real, solo el formato).
   var runPattern = /^[0-9]{7,8}-[0-9kK]$/;
 
   function mostrarError(id, mensaje) {
@@ -99,8 +87,6 @@ document.addEventListener('DOMContentLoaded', function () {
       esValido = false;
     }
 
-    // En "Nuevo usuario" la contraseña es obligatoria.
-    // En "Editar usuario" es opcional (se deja en blanco si no se cambia).
     if (!esEdicion && passwordInput.value.trim() === '') {
       mostrarError('password', 'Debes ingresar una contraseña.');
       esValido = false;
