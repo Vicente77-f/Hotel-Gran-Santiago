@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Gran Santiago | Administrar Habitaciones</title>
+    <meta name="description" content="Panel de administración de habitaciones del Hotel Gran Santiago">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body> 
+    <nav class="admin-navbar">
+        <div class="logo">Hotel Gran Santiago - ADMIN</div>
+        <ul class="nav-links">
+            <li><a href="admin-home.html">Inicio</a></li>
+            <li><a href="admin-habitaciones.html" class="active">Habitaciones</a></li>
+            <li><a href="admin-usuarios.html">Usuarios</a></li>
+            <li><a href="../index.html">Ver sitio web</a></li>
+        </ul>
+    </nav>
+
+    <main class="admin-container">
+        <section class="admin-header">
+            <h1>Gestión de Habitaciones</h1>
+            <a href="admin-habitacion-nueva.html" class="btn btn-primary">+ Nueva Habitación</a>
+        </section> 
+
+        <section class="table-container">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Imagen</th>
+                        <th>Tipo de Habitación</th>
+                        <th>Capacidad</th>
+                        <th>Precio por Noche</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    <tr>
+                        <td>101</td>
+                        <td><img src="../img/habitacion-doble.jpg" alt="Habitación Doble" width="80"></td>
+                        <td>Habitación Doble</td>
+                        <td>2 Personas</td>
+                        <td>$85.000</td>
+                        <td><span class="status disponible">Disponible</span></td>
+                        <td class="acciones">
+                            <a href="admin-habitacion-editar.html" class="btn-action btn-edit">Editar</a>
+                            <button class="btn-action btn-delete">Eliminar</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>102</td>
+                        <td><img src="../img/suite-junior.jpg" alt="Suite Junior" width="80"></td>
+                        <td>Suite Junior</td>
+                        <td>3 Personas</td>
+                        <td>$120.000</td>
+                        <td><span class="status ocupada">Ocupada</span></td>
+                        <td class="acciones">
+                            <a href="admin-habitacion-editar.html" class="btn-action btn-edit">Editar</a>
+                            <button class="btn-action btn-delete">Eliminar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

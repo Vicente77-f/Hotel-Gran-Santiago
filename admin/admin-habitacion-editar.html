@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Gran Santiago | Editar Habitación</title>
+    <meta name="description" content="Panel de administración para editar habitaciones del Hotel Gran Santiago">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>  
+    <nav class="admin-navbar">
+        <div class="logo">Hotel Gran Santiago - ADMIN</div>
+        <ul class="nav-links">
+            <li><a href="admin-home.html">Inicio</a></li>
+            <li><a href="admin-habitaciones.html" class="active">Habitaciones</a></li>
+            <li><a href="admin-usuarios.html">Usuarios</a></li>
+            <li><a href="../index.html">Ver sitio web</a></li>
+        </ul>
+    </nav>
+    <main class="admin-container">
+        <section class="admin-header">
+            <h1>Editar Habitación: 101</h1>
+            <a href="admin-habitaciones.html" class="btn btn-secondary">Volver al listado</a>
+        </section>
+
+        <section class="form-container">
+            <form action="#" method="POST" class="admin-form">
+                
+                <div class="form-group">
+                    <label for="numero">Número de Habitación / ID:</label>
+                    <input type="text" id="numero" name="numero" value="101" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="tipo">Tipo de Habitación:</label>
+                    <select id="tipo" name="tipo" required>
+                        <option value="simple">Habitación Simple</option>
+                        <option value="doble" selected>Habitación Doble</option>
+                        <option value="suite-junior">Suite Junior</option>
+                        <option value="suite-premium">Suite Premium</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="capacidad">Capacidad (Personas):</label>
+                    <input type="number" id="capacidad" name="capacidad" min="1" max="6" value="2" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="precio">Precio por Noche (CLP):</label>
+                    <input type="number" id="precio" name="precio" value="85000" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="estado">Estado Actual:</label>
+                    <select id="estado" name="estado" required>
+                        <option value="disponible" selected>Disponible</option>
+                        <option value="mantenimiento">En Mantenimiento</option>
+                        <option value="ocupada">Ocupada</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Imagen Actual:</label><br>
+                    <img src="../img/habitacion-doble.jpg" alt="Habitación Doble Actual" width="150" style="margin-bottom: 10px; border-radius: 5px;"><br>
+                    
+                    <label for="imagen">Actualizar Imagen de la Habitación (opcional):</label>
+                    <input type="file" id="imagen" name="imagen" accept="image/*">
+                </div>
+
+                <div class="form-group">
+                    <label for="descripcion">Descripción / Detalles:</label>
+                    <textarea id="descripcion" name="descripcion" rows="4">Habitación con cama matrimonial, vista al centro de Santiago, incluye desayuno buffet y acceso a internet de alta velocidad.</textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Actualizar Cambios</button>
+                    <a href="admin-habitaciones.html" class="btn btn-secondary" style="text-decoration: none;">Cancelar</a>
+                </div>
+
+            </form>
+        </section>
+    </main>
+</body>
+</html>
