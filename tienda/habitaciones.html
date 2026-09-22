@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Habitaciones · Hotel Gran Santiago </title>
     <meta name="description" content="conoce las habitaciones y suites disponibles en el Hotel gran Santiago" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
 </head>
 <body>
-    
+
+    <!-- ===================== HEADER / NAV ===================== -->
+    <!-- Encabezado con logo, menú y el link al carrito (con contador). -->
     <header class="site-header">
         <div class="header-inner">
             <a href="index.html" class="logo">Hotel Gran Santiago</a>
@@ -18,6 +20,7 @@
                     <li><a href="habitaciones.html">Habitaciones</a> </li>
                     <li><a href="#contacto">Contacto</a> </li>
                     <li>
+                        <!-- cart-count se actualiza solo desde js/cart.js -->
                         <a href="carrito.html" class="cart-link">🛒 Carrito<span id="cart-count" class="cart-badge" hidden>0</span></a>
                     </li>
                 </ul>
@@ -26,6 +29,8 @@
     </header>
 
     <main>
+        <!-- ===================== HERO DE LA PÁGINA ===================== -->
+        <!-- Franja superior con la migaja de pan (breadcrumb) y el título. -->
         <section class="page-hero">
             <div class="page-hero-inner">
                 <p class="breadcrumb"><a href="index.html">Inicio</a> / Habitaciones </p>
@@ -34,11 +39,20 @@
             </div>
         </section>
 
+        <!-- ===================== LISTADO DE HABITACIONES ===================== -->
+        <!--
+          Cada habitación es un <article class="room-card">: imagen + nombre +
+          descripción + meta (huéspedes/m²) + precio y botón "Ver detalle".
+          El botón lleva a detalle-habitacion.html?id=N: ese número "id" es el
+          que lee detalle-habitacion.html con JavaScript para saber qué
+          habitación mostrar (mira js/rooms-data.js y js/detalle-habitacion.js).
+        -->
         <section class="rooms-section" aria-label="Listado de habitaciones disponibles">
             <div class="rooms-grid">
 
+                <!-- Habitación 1: Suite vista cordillera -->
                 <article class="room-card">
-                    <img src="C:\Users\kenay\Downloads\habitacion_doble_1.webp" alt="Habitacion Doble con balcon privado y vista a la cordillera" lading="lazy" />
+                    <img src="../img/suite-junior.jpg" alt="Habitacion Doble con balcon privado y vista a la cordillera" loading="lazy" />
                     <div class="room-card-body">
                         <h2>Suite vista cordillera</h2>
                         <p class="room-card-desc">Habitacion matrimonial con vista panoramica a la cordillera y balcon privado.</p>
@@ -53,8 +67,10 @@
                     </div>
                 </article>
 
+                <!-- Habitación 2: Habitación Ejecutiva -->
                 <article class="room-card">
-                    <img scr="C:\Users\kenay\Downloads\habitacion_ejecutiva_2.jpg" alt="Habitacion Ejecutiva con escritorio de trabajo" loading="lazy" />
+                    <!-- Bug corregido: el atributo estaba escrito "scr" en vez de "src", por eso la imagen nunca se veía. -->
+                    <img src="../img/habitacion-doble.jpg" alt="Habitacion Ejecutiva con escritorio de trabajo" loading="lazy" />
                     <div class="room-card-body">
                         <h2>Habitacion Ejecutiva</h2>
                         <p class="room-card-desc">Habitacion ejecutiva pensadas para viajes de negocio, con escritorio y cercano a metro.</p>
@@ -69,8 +85,9 @@
                     </div>
                 </article>
 
-                <article>
-                    <img scr="C:\Users\kenay\Downloads\habitacion_familiar_3.jpg" alt="Suite Familiar" loading="lazy"/>
+                <!-- Habitación 3: Suite Familiar -->
+                <article class="room-card">
+                    <img src="../img/bano-premium.jpg" alt="Suite Familiar" loading="lazy"/>
                     <div class="room-card-body">
                         <h2>Suite Familiar</h2>
                         <p class="room-card-desc">Suite amplia con living independiente, idela para familias.</p>
@@ -79,14 +96,15 @@
                             <li> 48 m²</li>
                         </ul>
                         <div class="room-card-footer">
-                            <spane class="room-price">105.000<small>/noche</small></spane>
+                            <span class="room-price">$105.000<small>/noche</small></span>
                             <a href="detalle-habitacion.html?id=3" class="btn btn-primary">ver detalle</a>
                         </div>
                     </div>
                 </article>
 
-                <article>
-                    <img scr="C:\Users\kenay\Downloads\habitacion_doble_4.jpg" alt="Habitacion doble con vista a la ciudad" loading="lazy"/>
+                <!-- Habitación 4: Habitación Doble -->
+                <article class="room-card">
+                    <img src="../img/habitacion-doble.jpg" alt="Habitacion doble con vista a la ciudad" loading="lazy"/>
                     <div class="room-card-body">
                         <h2>Habitacion Doble</h2>
                         <p class="room-card-desc">Habitacion luminosa con vista parcial a la torre costanera.</p>
@@ -95,14 +113,15 @@
                             <li> 24 m²</li>
                         </ul>
                         <div class="room-card-footer">
-                            <spane class="room-price">70.000<small>/noche</small></spane>
+                            <span class="room-price">$70.000<small>/noche</small></span>
                             <a href="detalle-habitacion.html?id=4" class="btn btn-primary">ver detalle</a>
                         </div>
                     </div>
                 </article>
 
-                <article>
-                    <img scr="c:\Users\kenay\Downloads\suite_premium_andes_5.jpg" alt="Suite Premium Andes con terraza privada" loading="lazy"/>
+                <!-- Habitación 5: Suite Premium Andes -->
+                <article class="room-card">
+                    <img src="../img/hero-fachada.jpg" alt="Suite Premium Andes con terraza privada" loading="lazy"/>
                     <div class="room-card-body">
                         <h2>Suite Premium Andes</h2>
                         <p class="room-card-desc">Nuestra Suite mas exclusiva, con terraza privada y vista 360°.</p>
@@ -111,14 +130,15 @@
                             <li> 58 m²</li>
                         </ul>
                         <div class="room-card-footer">
-                            <spane class="room-price">145.000<small>/noche</small></spane>
+                            <span class="room-price">$145.000<small>/noche</small></span>
                             <a href="detalle-habitacion.html?id=5" class="btn btn-primary">ver detalle</a>
                         </div>
                     </div>
                 </article>
 
-                <article>
-                    <img scr="c:\Users\kenay\Downloads\habitacion_individual_bussines_6.jpg" alt="Habitacion Business Individual, compacta y funcional" loading="lazy"/>
+                <!-- Habitación 6: Habitación Individual Business -->
+                <article class="room-card">
+                    <img src="../img/suite-junior.jpg" alt="Habitacion Business Individual, compacta y funcional" loading="lazy"/>
                     <div class="room-card-body">
                         <h2>Habitacion Individual Business</h2>
                         <p class="room-card-desc">Habitacion compacta pensadas para viajeros de negocios que viajan solos.</p>
@@ -127,7 +147,7 @@
                             <li> 16 m²</li>
                         </ul>
                         <div class="room-card-footer">
-                            <spane class="room-price">48.000<small>/noche</small></spane>
+                            <span class="room-price">$48.000<small>/noche</small></span>
                             <a href="detalle-habitacion.html?id=6" class="btn btn-primary">ver detalle</a>
                         </div>
                     </div>
@@ -137,6 +157,7 @@
         </section>
     </main>
 
+    <!-- ===================== FOOTER ===================== -->
     <footer class="site-footer">
         <div class="footer-inner">
             <div>
@@ -153,6 +174,6 @@
         </div>
     </footer>
 
-    <script scr="js/cart.js"></script>
+    <script src="../js/cart.js"></script>
 </body>
 </html>
