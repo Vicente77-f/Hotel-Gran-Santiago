@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto · Hotel Gran Santiago</title>
+    <meta name="description" content="Ponte en contacto con el Hotel Gran Santiago.">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="../index.html" class="logo">Hotel <span>Gran Santiago</span></a>
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="habitaciones.html">Habitaciones</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="blogs.html">Blog</a></li>
+                    <li><a href="contacto.html" class="active">Contacto</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="login.html" class="btn btn-outline">Iniciar sesión</a>
+                    <a href="registro.html" class="btn btn-primary">Registrarse</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="auth-section">
+            <div class="container">
+                <div class="auth-card contact-card-wide">
+                    <h1>Contáctanos</h1>
+                    <p>¿Tienes dudas sobre reservas o servicios? Escríbenos y te responderemos a la brevedad.</p>
+
+                    <form id="contactoForm">
+                        <div class="form-group">
+                            <label for="nombreContacto">Nombre completo</label>
+                            <input type="text" id="nombreContacto" name="nombreContacto" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="emailContacto">Correo electrónico</label>
+                            <input type="email" id="emailContacto" name="emailContacto" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mensajeContacto">Mensaje</label>
+                            <textarea id="mensajeContacto" name="mensajeContacto" rows="5" class="form-control-textarea" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">Enviar mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="../index.html" class="logo logo-light">Hotel <span>Gran Santiago</span></a>
+                <p>Tu estadía ideal en el corazón de la ciudad.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="habitaciones.html">Habitaciones</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contacto</h4>
+                <ul class="footer-contact">
+                    <li>Av. Libertador B. O'Higgins 1234</li>
+                    <li>+56 2 2345 6789</li>
+                    <li>contacto@hotelgransantiago.cl</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Hotel Gran Santiago. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/home-menu.js"></script>
+    <script src="../js/contacto.js"></script>
+</body>
+</html>

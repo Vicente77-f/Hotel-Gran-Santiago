@@ -1200,4 +1200,44 @@ admin-habitacion.html, donde se muestran las 3 acciones (nuevo,
   .detalle-usuario dd {
     margin-bottom: 6px;
   }
+  /* =====================================================
+   ESTILOS PARA BLOG Y CONTACTO
+   ===================================================== */
+
+.card-footer-spaced {
+    margin-top: 20px;
+}
+
+.blog-detail-container {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.blog-detail-image {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.blog-detail-content p {
+    margin-bottom: 20px;
+}
+
+.blog-detail-content h3 {
+    margin: 25px 0 10px;
+}
+
+.contact-card-wide {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-control-textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    font-family: inherit;
+    font-size: 1rem;
+}
 }
