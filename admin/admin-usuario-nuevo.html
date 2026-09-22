@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuevo usuario | Administrador - Hotel Gran Santiago</title>
+  <meta name="description" content="Crear un nuevo usuario desde el panel de administración de Hotel Gran Santiago.">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+  <!-- ===================== HEADER ADMIN ===================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="admin-home.html" class="logo">Hotel <span>Gran Santiago</span></a>
+
+      <div class="admin-user-info">
+        <span>Hola, Administrador</span>
+        <a href="../tienda/login.html" class="btn btn-outline">Cerrar sesión</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===================== FORMULARIO NUEVO USUARIO ===================== -->
+    <section class="admin-panel">
+      <div class="container">
+        <a href="admin-usuarios.html" class="link-arrow">&larr; Volver al listado</a>
+
+        <div class="admin-form-card">
+          <h1>Nuevo usuario</h1>
+          <p>Completa los datos para registrar un nuevo usuario en el sistema.</p>
+
+          <form id="usuarioNuevoForm" novalidate>
+            <div class="admin-form-grid">
+
+              <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" autocomplete="given-name" placeholder="Ej: Matías">
+                <span class="form-error" id="nombreError"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="apellidos">Apellidos</label>
+                <input type="text" id="apellidos" name="apellidos" autocomplete="family-name" placeholder="Ej: Erices Ejemplo">
+                <span class="form-error" id="apellidosError"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="run">Run</label>
+                <input type="text" id="run" name="run" placeholder="12345678-9">
+                <small class="form-hint">Formato: números seguidos de guion y dígito verificador.</small>
+                <span class="form-error" id="runError"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" autocomplete="email" placeholder="ejemplo@correo.com">
+                <span class="form-error" id="emailError"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="fechaNacimiento">Fecha de nacimiento</label>
+                <input type="date" id="fechaNacimiento" name="fechaNacimiento">
+                <span class="form-error" id="fechaNacimientoError"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="tipoUsuario">Tipo de usuario</label>
+                <select id="tipoUsuario" name="tipoUsuario">
+                  <option value="" selected disabled>Selecciona una opción</option>
+                  <option value="huesped">Huésped</option>
+                  <option value="administrador">Administrador</option>
+                </select>
+                <span class="form-error" id="tipoUsuarioError"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="region">Región</label>
+                <select id="region" name="region">
+                  <option value="" selected disabled>Selecciona una opción</option>
+                  <option value="rm">Región Metropolitana de Santiago</option>
+                  <option value="valparaiso">Región de Valparaíso</option>
+                  <option value="biobio">Región del Biobío</option>
+                  <option value="otra">Otra</option>
+                </select>
+                <span class="form-error" id="regionError"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="comuna">Comuna</label>
+                <input type="text" id="comuna" name="comuna" placeholder="Ej: Santiago">
+                <span class="form-error" id="comunaError"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="direccion">Dirección</label>
+                <input type="text" id="direccion" name="direccion" placeholder="Ej: Av. Ejemplo 123">
+                <span class="form-error" id="direccionError"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" name="password" autocomplete="new-password">
+                <small class="form-hint">Debe tener al menos 6 caracteres.</small>
+                <span class="form-error" id="passwordError"></span>
+              </div>
+
+            </div>
+
+            <div class="admin-form-actions">
+              <button type="submit" class="btn btn-primary">Crear usuario</button>
+              <a href="admin-usuarios.html" class="btn btn-outline">Cancelar</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Hotel Gran Santiago — Panel de administración interno.</p>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+  <script src="../js/admin-usuario-form.js"></script>
+</body>
+</html>
