@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Gran Santiago | Panel de administración</title>
+  <meta name="description" content="Hotel Gran Santiago: panel de administración. Mismo diseño del sitio público, con acceso de administrador.">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+  <!-- ===================== HEADER / NAV ===================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">Hotel <span>Gran Santiago</span></a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="main-nav" id="mainNav">
+        <ul>
+          <li><a href="../index.html" class="active">Inicio</a></li>
+          <li><a href="../tienda/habitaciones.html">Habitaciones</a></li>
+          <li><a href="../tienda/nosotros.html">Nosotros</a></li>
+          <li><a href="../tienda/blogs.html">Blog</a></li>
+          <li><a href="../tienda/contacto.html">Contacto</a></li>
+        </ul>
+        <div class="nav-actions">
+          <span class="btn btn-outline" aria-hidden="true">👤 Admin</span>
+          <a href="../tienda/login.html" class="btn btn-primary">Cerrar sesión</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" style="background-image: url('../img/hero-fachada.jpg');">
+    <div class="hero-overlay">
+      <div class="container hero-content">
+        <p class="hero-eyebrow">Bienvenido a</p>
+        <h1>Hotel Gran Santiago</h1>
+        <p class="hero-subtitle">Un lugar cómodo para descansar en el centro de Santiago.</p>
+        <div class="hero-buttons">
+          <a href="../tienda/habitaciones.html" class="btn btn-primary btn-lg">Ver habitaciones</a>
+          <a href="../tienda/contacto.html" class="btn btn-outline-light btn-lg">Reservar ahora</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SOBRE NOSOTROS (TEASER) ===================== -->
+  <section class="about-teaser">
+    <div class="container about-teaser-grid">
+      <div class="about-teaser-image">
+        <img src="../img/edificio.jpg" alt="Fachada del Hotel Gran Santiago">
+      </div>
+      <div class="about-teaser-text">
+        <span class="section-tag">Nuestra historia</span>
+        <h2>Un lugar pensado para vos</h2>
+        <p>
+          Hotel Gran Santiago combina diseño contemporáneo con un servicio cercano.
+          Cada rincón fue pensado para que tu viaje, ya sea de negocios o de descanso,
+          se sienta cómodo desde el primer momento.
+        </p>
+        <a href="../tienda/nosotros.html" class="link-arrow">Conocer más sobre nosotros →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== HABITACIONES DESTACADAS ===================== -->
+  <section class="rooms-preview">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-tag">Alojamiento</span>
+        <h2>Habitaciones destacadas</h2>
+        <p>Elegí el espacio ideal para tu estadía, todas equipadas con la máxima comodidad.</p>
+      </div>
+
+      <div class="rooms-grid">
+        <article class="room-card">
+          <div class="room-card-image">
+            <img src="../img/habitacion-doble.jpg" alt="Habitación doble con cama matrimonial">
+          </div>
+          <div class="room-card-body">
+            <h3>Habitación Doble</h3>
+            <p>Amplia y luminosa, ideal para parejas o viajes cortos de negocios.</p>
+            <a href="../tienda/detalle-habitacion.html" class="link-arrow">Ver detalle →</a>
+          </div>
+        </article>
+
+        <article class="room-card">
+          <div class="room-card-image">
+            <img src="../img/suite-junior.jpg" alt="Suite junior con living independiente">
+          </div>
+          <div class="room-card-body">
+            <h3>Suite Junior</h3>
+            <p>Living independiente y ambientación cálida para una estadía superior.</p>
+            <a href="../tienda/detalle-habitacion.html" class="link-arrow">Ver detalle →</a>
+          </div>
+        </article>
+
+        <article class="room-card">
+          <div class="room-card-image">
+            <img src="../img/bano-premium.jpg" alt="Baño premium en mármol">
+          </div>
+          <div class="room-card-body">
+            <h3>Habitación Premium</h3>
+            <p>Baño en mármol y terminaciones de categoría para un lujo total.</p>
+            <a href="../tienda/detalle-habitacion.html" class="link-arrow">Ver detalle →</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="rooms-cta">
+        <a href="../tienda/habitaciones.html" class="btn btn-primary">Ver todas las habitaciones</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== AMENIDADES ===================== -->
+  <section class="amenities">
+    <div class="container">
+      <div class="section-heading section-heading-light">
+        <span class="section-tag">Servicios</span>
+        <h2>Todo lo que necesitás, en un mismo lugar</h2>
+      </div>
+
+      <div class="amenities-grid">
+        <div class="amenity-item">
+          <div class="amenity-icon" aria-hidden="true">📶</div>
+          <h3>WiFi</h3>
+          <p>Conexión disponible en todas las habitaciones.</p>
+        </div>
+
+        <div class="amenity-item">
+          <div class="amenity-icon" aria-hidden="true">🍳</div>
+          <h3>Desayuno incluido</h3>
+          <p>Buffet todas las mañanas.</p>
+        </div>
+
+        <div class="amenity-item">
+          <div class="amenity-icon" aria-hidden="true">🏊</div>
+          <h3>Piscina</h3>
+          <p>Espacio de relax para los huéspedes.</p>
+        </div>
+
+        <div class="amenity-item">
+          <div class="amenity-icon" aria-hidden="true">🅿️</div>
+          <h3>Estacionamiento</h3>
+          <p>Estacionamiento gratuito para huéspedes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA FINAL ===================== -->
+  <section class="cta-banner">
+    <div class="container cta-banner-inner">
+      <h2>¿Listo para tu próxima estadía?</h2>
+      <p>Creá tu cuenta y reservá tu habitación en minutos.</p>
+      <a href="../tienda/registro.html" class="btn btn-primary btn-lg">Crear cuenta</a>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="../index.html" class="logo logo-light">Hotel <span>Gran Santiago</span></a>
+        <p>Tu estadía ideal en el corazón de la ciudad.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="../tienda/habitaciones.html">Habitaciones</a></li>
+          <li><a href="../tienda/nosotros.html">Nosotros</a></li>
+          <li><a href="../tienda/blogs.html">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Cuenta</h4>
+        <ul>
+          <li><a href="../tienda/login.html">Iniciar sesión</a></li>
+          <li><a href="../tienda/registro.html">Registrarse</a></li>
+          <li><a href="../tienda/contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <ul class="footer-contact">
+          <li>Av. Libertador Bernardo O'Higgins 1234, Santiago</li>
+          <li>+56 2 2345 6789</li>
+          <li>contacto@hotelgransantiago.cl</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 Hotel Gran Santiago. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/home-menu.js"></script>
+</body>
+</html>
