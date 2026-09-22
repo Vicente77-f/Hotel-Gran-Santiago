@@ -1,74 +1,128 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hotel Gran Santiago | Gestión de habitaciones</title>
-  <meta name="description" content="Gestión de habitaciones del panel de administración de Hotel Gran Santiago.">
-  <link rel="stylesheet" href="../css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Gran Santiago | Administrar Habitaciones</title>
+    <meta name="description" content="Panel de administración de habitaciones del Hotel Gran Santiago">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
+
 <body>
+    <nav class="admin-navbar">
+        <div class="logo">Hotel Gran Santiago - ADMIN</div>
+        <ul class="nav-links">
+            <li><a href="admin-home.html">Inicio</a></li>
+            <li><a href="admin-habitaciones.html" class="active">Habitaciones</a></li>
+            <li><a href="admin-usuarios.html">Usuarios</a></li>
+            <li><a href="../index.html">Ver sitio web</a></li>
+        </ul>
+    </nav>
 
-  <!-- ===================== HEADER ADMIN ===================== -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="admin-home.html" class="logo">Hotel <span>Gran Santiago</span></a>
+    <main class="admin-container">
+        <section class="admin-header">
+            <h1>Gestión de Habitaciones</h1>
+            <a href="admin-habitacion-nueva.html" class="btn btn-primary">+ Nueva Habitación</a>
+        </section>
 
-      <div class="admin-user-info">
-        <span>Hola, Administrador</span>
-        <a href="../tienda/login.html" class="btn btn-outline">Cerrar sesión</a>
-      </div>
-    </div>
-  </header>
+        <section class="table-container">
+          <table class="admin-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Imagen</th>
+                    <th>Tipo de Habitación</th>
+                    <th>Capacidad</th>
+                    <th>Precio por Noche</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
 
-  <main>
+            <tbody>
+                <!-- Habitación 1 -->
+                <tr>
+                    <td>101</td>
+                    <td><img src="../img/suite-junior.jpg" alt="Suite vista cordillera" style="width: 100px; border-radius: 4px; object-fit: cover;"></td>
+                    <td>Suite vista cordillera</td>
+                    <td>2 Personas</td>
+                    <td>$75.000</td>
+                    <td><span class="status disponible">Disponible</span></td>
+                    <td>
+                        <a href="admin-habitacion-editar.html" class="btn-action btn-edit">Editar</a>
+                        <button class="btn-action btn-delete">Eliminar</button>
+                    </td>
+                </tr>
+                <!-- 2 -->
+                <tr>
+                    <td>102</td>
+                    <td><img src="../img/habitacion-doble.jpg" alt="Habitación Ejecutiva" style="width: 100px; border-radius: 4px; object-fit: cover;"></td>
+                    <td>Habitacion Ejecutiva</td>
+                    <td>2 Personas</td>
+                    <td>$65.000</td>
+                    <td><span class="status disponible">Disponible</span></td>
+                    <td>
+                        <a href="admin-habitacion-editar.html" class="btn-action btn-edit">Editar</a>
+                        <button class="btn-action btn-delete">Eliminar</button>
+                    </td>
+                </tr>
+                <!-- 3 -->
+                <tr>
+                    <td>103</td>
+                    <td><img src="../img/bano-premium.jpg" alt="Suite Familiar" style="width: 100px; border-radius: 4px; object-fit: cover;"></td>
+                    <td>Suite Familiar</td>
+                    <td>4 Personas</td>
+                    <td>$105.000</td>
+                    <td><span class="status ocupada">Ocupada</span></td>
+                    <td>
+                        <a href="admin-habitacion-editar.html" class="btn-action btn-edit">Editar</a>
+                        <button class="btn-action btn-delete">Eliminar</button>
+                    </td>
+                </tr>
+                <!-- 4 -->
+                <tr>
+                    <td>104</td>
+                    <td><img src="../img/habitacion-doble.jpg" alt="Habitación Doble" style="width: 100px; border-radius: 4px; object-fit: cover;"></td>
+                    <td>Habitacion Doble</td>
+                    <td>2 Personas</td>
+                    <td>$70.000</td>
+                    <td><span class="status disponible">Disponible</span></td>
+                    <td>
+                        <a href="admin-habitacion-editar.html" class="btn-action btn-edit">Editar</a>
+                        <button class="btn-action btn-delete">Eliminar</button>
+                    </td>
+                </tr>
+                <!-- 5 -->
+                <tr>
+                    <td>105</td>
+                    <td><img src="../img/hero-fachada.jpg" alt="Suite Premium Andes" style="width: 100px; border-radius: 4px; object-fit: cover;"></td>
+                    <td>Suite Premium Andes</td>
+                    <td>3 Personas</td>
+                    <td>$145.000</td>
+                    <td><span class="status mantenimiento">Mantenimiento</span></td>
+                    <td>
+                        <a href="admin-habitacion-editar.html" class="btn-action btn-edit">Editar</a>
+                        <button class="btn-action btn-delete">Eliminar</button>
+                    </td>
+                </tr>
+                <!-- 6 -->
+                <tr>
+                    <td>106</td>
+                    <td><img src="../img/suite-junior.jpg" alt="Habitación Individual Business" style="width: 100px; border-radius: 4px; object-fit: cover;"></td>
+                    <td>Habitacion Individual Business</td>
+                    <td>1 Persona</td>
+                    <td>$48.000</td>
+                    <td><span class="status disponible">Disponible</span></td>
+                    <td>
+                        <a href="admin-habitacion-editar.html" class="btn-action btn-edit">Editar</a>
+                        <button class="btn-action btn-delete">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+          </table>
+        </section>
+    </main>
 
-    <!-- ===================== GESTIÓN DE HABITACIONES ===================== -->
-    <section class="admin-panel">
-      <div class="container">
-        <a href="admin-home.html" class="link-arrow">&larr; Volver al panel</a>
-        <h1>Gestión de habitaciones</h1>
-        <p class="admin-intro">Elige qué quieres hacer con las habitaciones del hotel.</p>
-
-        <div class="admin-grid admin-grid-3">
-
-          <article class="admin-card">
-            <h2>Nueva habitación</h2>
-            <p>Registra una nueva habitación en el sistema.</p>
-            <div class="admin-card-actions">
-              <a href="admin-habitacion-nueva.html" class="btn btn-primary">Crear habitación</a>
-            </div>
-          </article>
-
-          <article class="admin-card">
-            <h2>Editar habitación</h2>
-            <p>Modifica los datos de una habitación existente.</p>
-            <div class="admin-card-actions">
-              <a href="admin-habitacion-editar.html" class="btn btn-outline">Editar</a>
-            </div>
-          </article>
-
-          <article class="admin-card">
-            <h2>Mostrar habitaciones</h2>
-            <p>Revisa el listado de habitaciones registradas.</p>
-            <div class="admin-card-actions">
-              <a href="admin-habitaciones-mostrar.html" class="btn btn-outline">Ver listado</a>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ===================== FOOTER ===================== -->
-  <footer class="site-footer">
-    <div class="container footer-bottom">
-      <p>&copy; 2026 Hotel Gran Santiago — Panel de administración interno.</p>
-    </div>
-  </footer>
-
-  <script src="../js/script.js"></script>
 </body>
 </html>
