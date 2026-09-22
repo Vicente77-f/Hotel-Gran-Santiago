@@ -4,63 +4,78 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Detalle usuario | Administrador - Hotel Gran Santiago</title>
+  <meta name="description" content="Detalle de un usuario en el panel de administración de Hotel Gran Santiago.">
   <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
 
-  <!-- TODO: reemplazar por el layout compartido de admin-home.html -->
-  <header class="admin-header">
-    <h1>Hotel Gran Santiago</h1>
+  <!-- ===================== HEADER ADMIN ===================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="admin-home.html" class="logo">Hotel <span>Gran Santiago</span></a>
+
+      <div class="admin-user-info">
+        <span>Hola, Administrador</span>
+        <a href="../tienda/login.html" class="btn btn-outline">Cerrar sesión</a>
+      </div>
+    </div>
   </header>
 
-  <nav class="admin-sidebar">
-    <ul>
-      <li><a href="admin-home.html">Inicio</a></li>
-      <li><a href="admin-habitaciones.html">Habitaciones</a></li>
-      <li><a href="admin-usuarios.html" aria-current="page">Usuarios</a></li>
-    </ul>
-  </nav>
+  <main>
 
-  <main class="admin-content">
-    <section aria-labelledby="titulo-usuario">
-      <h2 id="titulo-usuario">Detalle de usuario</h2>
+    <!-- ===================== DETALLE DE USUARIO ===================== -->
+    <section class="admin-panel">
+      <div class="container">
+        <a href="admin-usuarios.html" class="link-arrow">&larr; Volver al listado</a>
 
-      <dl class="detalle-usuario">
-        <dt>Run</dt>
-        <dd>190110228</dd>
+        <div class="admin-form-card">
+          <h1>Detalle de usuario</h1>
+          <p>Información registrada para este usuario.</p>
 
-        <dt>Nombre</dt>
-        <dd>Matias</dd>
+          <dl class="detalle-usuario">
+            <dt>Run</dt>
+            <dd>19.011.022-8</dd>
 
-        <dt>Apellidos</dt>
-        <dd>Ejemplo Apellido</dd>
+            <dt>Nombre</dt>
+            <dd>Matias</dd>
 
-        <dt>Correo</dt>
-        <dd>matias@duoc.cl</dd>
+            <dt>Apellidos</dt>
+            <dd>Ejemplo Apellido</dd>
 
-        <dt>Fecha de nacimiento</dt>
-        <dd>01/01/2000</dd>
+            <dt>Correo</dt>
+            <dd>matias@duoc.cl</dd>
 
-        <dt>Tipo de usuario</dt>
-        <dd>Administrador</dd>
+            <dt>Fecha de nacimiento</dt>
+            <dd>01/01/2000</dd>
 
-        <dt>Región</dt>
-        <dd>Región Metropolitana de Santiago</dd>
+            <dt>Tipo de usuario</dt>
+            <dd>Administrador</dd>
 
-        <dt>Comuna</dt>
-        <dd>Santiago</dd>
+            <dt>Región</dt>
+            <dd>Región Metropolitana de Santiago</dd>
 
-        <dt>Dirección</dt>
-        <dd>Av. Ejemplo 123</dd>
-      </dl>
+            <dt>Comuna</dt>
+            <dd>Santiago</dd>
 
-      <a href="admin-usuario-editar.html" class="btn btn-primary">Editar</a>
-      <a href="admin-usuarios.html" class="btn btn-secondary">Volver al listado</a>
+            <dt>Dirección</dt>
+            <dd>Av. Ejemplo 123</dd>
+          </dl>
+
+          <div class="admin-form-actions">
+            <a href="admin-usuario-editar.html" class="btn btn-primary">Editar</a>
+            <a href="admin-usuarios.html" class="btn btn-outline">Volver al listado</a>
+          </div>
+        </div>
+      </div>
     </section>
+
   </main>
 
-  <footer class="admin-footer">
-    <p>&copy; 2026 Hotel Gran Santiago</p>
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Hotel Gran Santiago — Panel de administración interno.</p>
+    </div>
   </footer>
 
   <script src="../js/script.js"></script>
