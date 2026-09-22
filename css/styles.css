@@ -13,7 +13,7 @@ body {
 }
 
 img {
-  max-width: 100%; /* imagen responsiva, según guía de diseño adaptable */
+  max-width: 100%;
   display: block;
 }
 
@@ -97,8 +97,6 @@ ul {
   color: #7a4b2b;
 }
 
-/* Selector hijo directo (>): afecta solo al span que es hijo
-   directo de .logo, tal como se explica en la guía de estilos */
 .logo > span {
   color: #c98a3a;
 }
@@ -340,14 +338,6 @@ ul {
   font-size: 0.85rem;
 }
 
-/* =====================================================
-   Media queries
-   Puntos de interrupción según guía "Para hacer una
-   página de diseño adaptable": 600px, 768px, 992px, 1200px
-   ===================================================== */
-
-/* Dispositivos largos (laptops/escritorio, 992px y más) ->
-   acá lo usamos para reducir de 3 a 2 columnas */
 @media only screen and (max-width: 992px) {
   .rooms-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -496,25 +486,8 @@ ul {
   font-weight: bold;
 }
 
-/* =====================================================
-   ESTILOS NUEVOS
-   Todo lo que sigue de aquí en adelante es código agregado
-   para darle diseño a: habitaciones.html, detalle-habitacion.html
-   y el carrito de compra (carrito.html). No se modificó nada
-   de lo que estaba arriba de esta línea.
-   Se reutiliza la misma paleta de colores del sitio:
-   marrón principal #7a4b2b, crema #f7f3ee / #ede8d4,
-   footer #935830, texto #333333.
-   ===================================================== */
 
-/* ---------- Header de las páginas de tienda (habitaciones/detalle/carrito) ----------
-   Estas páginas usan una versión más simple del header (clase "nav-list"
-   en vez de "main-nav"), así que le damos su propio estilo aquí sin tocar
-   las reglas de .main-nav que ya existían arriba. */
 .header-inner {
-  /* .header-inner ya tenía display:flex arriba; acá solo agregamos
-     el mismo padding lateral que usa .container para que no quede pegado
-     al borde de la pantalla en estas páginas. */
   max-width: 1100px;
   margin: 0 auto;
   padding-left: 20px;
@@ -557,8 +530,7 @@ ul {
   font-weight: bold;
 }
 
-/* ---------- Hero interno (título de página) ----------
-   Se usa arriba de "Habitaciones", "Detalle de habitación" y "Carrito". */
+/* ---------- Hero interno (título de página) ---------- */
 .page-hero {
   background-color: #f7f3ee;
   border-bottom: 1px solid #e4dccb;
@@ -594,12 +566,7 @@ ul {
   padding: 0 20px;
 }
 
-/* ---------- Grilla y tarjetas de habitaciones ----------
-   .rooms-grid y .room-card ya existían (se usan en la home), pero ahí las
-   tarjetas llevan la imagen dentro de un <div class="room-card-image">.
-   En habitaciones.html y detalle-habitacion.html la imagen va directo
-   dentro de <article class="room-card">, así que agregamos esta regla
-   para que también se vea bien en ese caso. */
+/* ---------- Grilla y tarjetas de habitaciones ---------- */
 .rooms-section {
   padding: 40px 0;
 }
@@ -650,10 +617,7 @@ ul {
   color: #777777;
 }
 
-/* ---------- Footer usado en habitaciones/detalle/carrito ----------
-   Esta variante de footer usa la clase "footer-inner" (en vez de
-   "footer-grid", que es la que usa index.html/login.html/registro.html),
-   así que la definimos aparte para no tocar la que ya existía. */
+/* ---------- Footer usado en habitaciones/detalle/carrito ---------- */
 .footer-inner {
   max-width: 1100px;
   margin: 0 auto;
@@ -772,11 +736,7 @@ ul {
   border: 0;
 }
 
-/* ---------- Formularios de reserva/carrito ----------
-   Reutilizamos las clases .form-group / .form-error / .btn-full que ya
-   existían para login/registro, así los formularios nuevos se ven
-   igual de consistentes con el resto del sitio. Acá solo agregamos el
-   "cascarón" (la tarjeta blanca) que las contiene en estas páginas. */
+/* ---------- Formularios de reserva/carrito ---------- */
 .booking-section,
 .reviews-section {
   max-width: 700px;
@@ -822,9 +782,7 @@ ul {
   gap: 24px;
 }
 
-/* Variante con 3 columnas: usada en admin-usuario.html y
-admin-habitacion.html, donde se muestran las 3 acciones (nuevo,
-   editar, mostrar) */
+
 .admin-grid-3 {
   grid-template-columns: repeat(3, 1fr);
 }
