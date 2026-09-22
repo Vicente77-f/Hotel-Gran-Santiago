@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detalle de habitación · Hotel Gran Santiago</title>
+    <meta name="description" content="Detalle, galería, video y reseñas de una habitación del Hotel Gran Santiago." />
+    <!-- Mismo CSS que el resto del sitio: subimos un nivel con "../" porque este archivo está dentro de /tienda/ -->
+    <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+
+    <!-- ===================== HEADER / NAV ===================== -->
+    <!-- Copiado igual que en habitaciones.html, para que el menú se vea igual en todo el flujo de compra. -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">Hotel Gran Santiago</a>
+            <nav aria-label="Navegacion principal">
+                <ul class="nav-list">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="habitaciones.html">Habitaciones</a> </li>
+                    <li><a href="#contacto">Contacto</a> </li>
+                    <li>
+                        <a href="carrito.html" class="cart-link">🛒 Carrito<span id="cart-count" class="cart-badge" hidden>0</span></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!--
+          ===================== RUTA DE NAVEGACIÓN =====================
+          "Cargando…" es solo el texto inicial: en cuanto carga la página,
+          detalle-habitacion.js lo reemplaza por el nombre real de la
+          habitación (mira la función renderizarHabitacion en ese archivo).
+        -->
+        <nav aria-label="Ruta de navegación" class="breadcrumb-nav">
+            <a href="index.html">Inicio</a> / <a href="habitaciones.html">Habitaciones</a> / <span id="breadcrumb-habitacion">Cargando…</span>
+        </nav>
+
+        <!--
+          ===================== GALERÍA + INFORMACIÓN =====================
+          Esta sección está vacía a propósito en el HTML: todo su contenido
+          (imagen principal, miniaturas, nombre, descripción, amenidades,
+          precio) lo completa detalle-habitacion.js apenas se abre la página,
+          leyendo el número "?id=" que viene en la URL (por ejemplo
+          detalle-habitacion.html?id=3) y buscando esa habitación dentro
+          de rooms-data.js.
+        -->
+        <section class="room-detail" id="room-detail" aria-live="polite">
+
+            <!-- Columna izquierda: foto grande + tira de miniaturas clickeables -->
+            <div class="room-gallery">
+                <img id="main-image" src="" alt="" />
+                <div id="thumbnail-strip" class="thumbnail-strip"></div>
+            </div>
+
+            <!-- Columna derecha: nombre, descripción, lista de comodidades y precio -->
+            <div class="room-info">
+                <h1 id="room-name">Cargando habitación…</h1>
+                <p id="room-description"></p>
+                <ul id="room-amenities" class="amenities-list"></ul>
+                <div class="room-price-block">
+                    <span id="room-price" class="room-price-big"></span>
+                    <span id="room-capacity" class="room-capacity"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== VIDEO DE LA HABITACIÓN ===================== -->
+        <!-- El "src" del iframe también lo completa el JS (viene del campo "video" en rooms-data.js). -->
+        <section class="room-video" aria-label="Video de la habitación">
+            <h2>Conoce la habitación</h2>
+            <div class="video-wrapper">
+                <iframe id="room-video-frame" src="" title="Video de la habitación" allowfullscreen loading="lazy"></iframe>
+            </div>
+        </section>
+
+        <!--
+          ===================== AGREGAR AL CARRITO =====================
+          Acá el huésped elige sus fechas y cuántas personas se hospedan, y
+          al enviar el formulario se agrega la habitación al carrito
+          (localStorage) en vez de reservar directo. La confirmación final
+          se hace después, en carrito.html.
+        -->
+        <section class="booking-section" aria-label="Agregar al carrito">
+            <h2>Agrega esta habitación a tu carrito</h2>
+            <p>Elige tus fechas y cantidad de huéspedes. Podrás revisar el detalle y confirmar todo desde el carrito.</p>
+
+            <form id="form-agregar-carrito" novalidate>
+                <div class="form-row form-row-split">
+                    <div>
+                        <label for="fecha-llegada">Fecha de llegada</label>
+                        <input type="date" id="fecha-llegada" name="fecha-llegada" required />
+                        <span class="field-error" id="error-fecha-llegada"></span>
+                    </div>
+                    <div>
+                        <label for="fecha-salida">Fecha de salida</label>
+                        <input type="date" id="fecha-salida" name="fecha-salida" required />
+                        <span class="field-error" id="error-fecha-salida"></span>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label for="cantidad-huespedes">Número de huéspedes</label>
+                    <!-- Las <option> se generan solas según la capacidad de la habitación (ver detalle-habitacion.js) -->
+                    <select id="cantidad-huespedes" name="cantidad-huespedes" required>
+                        <option value="">Selecciona una opción</option>
+                    </select>
+                    <span class="field-error" id="error-cantidad-huespedes"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Agregar al carrito</button>
+                <p id="mensaje-agregado" class="form-success" hidden></p>
+            </form>
+        </section>
+
+        <!--
+          ===================== RESEÑAS =====================
+          "reviews-list" se llena con las reseñas que ya vienen en
+          rooms-data.js, y además se puede agregar una reseña nueva desde
+          el formulario de abajo (queda solo en la memoria del navegador,
+          no se guarda en un servidor).
+        -->
+        <section class="reviews-section" aria-label="Reseñas de huéspedes">
+            <h2>Lo que dicen nuestros huéspedes</h2>
+            <div id="reviews-summary" class="reviews-summary"></div>
+            <ul id="reviews-list" class="reviews-list"></ul>
+
+            <form id="form-resena" novalidate>
+                <h3>Deja tu reseña</h3>
+
+                <div class="form-row">
+                    <label for="resena-nombre">Tu nombre</label>
+                    <input type="text" id="resena-nombre" name="resena-nombre" required minlength="2" />
+                    <span class="field-error" id="error-resena-nombre"></span>
+                </div>
+
+                <div class="form-row">
+                    <label for="resena-calificacion">Calificación</label>
+                    <select id="resena-calificacion" name="resena-calificacion" required>
+                        <option value="">Selecciona</option>
+                        <option value="5">5 - Excelente</option>
+                        <option value="4">4 - Muy bueno</option>
+                        <option value="3">3 - Bueno</option>
+                        <option value="2">2 - Regular</option>
+                        <option value="1">1 - Malo</option>
+                    </select>
+                    <span class="field-error" id="error-resena-calificacion"></span>
+                </div>
+
+                <div class="form-row">
+                    <label for="resena-comentario">Comentario</label>
+                    <textarea id="resena-comentario" name="resena-comentario" rows="3" required minlength="10"></textarea>
+                    <span class="field-error" id="error-resena-comentario"></span>
+                </div>
+
+                <button type="submit" class="btn btn-outline">Publicar reseña</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div>
+                <p class="footer-brand">Hotel Gran Santiago</p>
+                <p>Av. Libertador Bernardo O'Higgins 1234, Santiago,Chile</p>
+            </div>
+            <div>
+                <p>Reservas: reservas@hotelgransantiago.cl</p>
+                <p>+56 2 2345 6789</p>
+            </div>
+            <div>
+                <p>&copy; 2026 Hotel Gran Santiago. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!--
+      Orden importante: rooms-data.js y validaciones.js y cart.js deben
+      cargar ANTES que detalle-habitacion.js, porque detalle-habitacion.js
+      usa funciones y datos definidos en esos tres archivos.
+    -->
+    <script src="../js/rooms-data.js"></script>
+    <script src="../js/validaciones.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/detalle-habitacion.js"></script>
+</body>
+</html>
